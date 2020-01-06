@@ -1,0 +1,31 @@
+import random
+list=[]
+r=random.randint(1000000000,9999999999)
+if r not in list:
+  acc_no=r
+uname={}
+Phone_number={}
+Mail_id={}
+print("ENTER YOUR NAME")
+user_name=input()
+uname[acc_no] = user_name
+f = open("bankinfo.txt", "w")
+f.write(str(uname))
+print("ENTER YOUR PHONE NUMBER")
+def phone(phone_number):
+  if len(phone_number) > 10 or len(phone_number) < 9:
+    print("please enter valid phone number")
+    phone_number=input()
+    phone(phone_number)
+phone_number=input()
+phone(phone_number)
+Phone_number[acc_no]=phone_number
+print("ENTER YOUR MAIL ID")
+mail_id=input()
+Mail_id[acc_no]=mail_id
+f.write(str(Phone_number))
+f.write(str(Mail_id))
+
+
+f.close()
+
