@@ -7,8 +7,16 @@ uname={}
 Phone_number={}
 Mail_id={}
 print("ENTER YOUR NAME")
+def username(user_name):
+  if (user_name.isalpha()) == True: 
+    uname[acc_no] = user_name
+  else:
+    print("enter valid name")
+    user_name=input()
+    username(user_name)
 user_name=input()
-uname[acc_no] = user_name
+username(user_name)
+  
 f = open("bankinfo.txt", "w")
 f.write(str(uname))
 print("ENTER YOUR PHONE NUMBER")
@@ -21,8 +29,18 @@ phone_number=input()
 phone(phone_number)
 Phone_number[acc_no]=phone_number
 print("ENTER YOUR MAIL ID")
-mail_id=input()
-Mail_id[acc_no]=mail_id
+import re 
+regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
+def check(email):  
+    if(re.search(regex,email)):  
+        email = email 
+    else:  
+        print("enter valid Email")  
+        email=input()
+        check(email)
+email=input()
+check(email)
+Mail_id[acc_no]= email
 f.write(str(Phone_number))
 f.write(str(Mail_id))
 
