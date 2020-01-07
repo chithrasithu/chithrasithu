@@ -1,22 +1,22 @@
 import random
 list=[]
 r=random.randint(1000000000,9999999999)
-list.append(r)
 if r not in list:
   acc_no=r
 uname={}
 Phone_number={}
 Mail_id={}
+print("user_accountno",acc_no)
 print("ENTER YOUR NAME")
-def username(user_name):
+def username(user_name,acc_no):
   if (user_name.isalpha()) == True: 
     uname.update({acc_no:user_name}) 
   else:
     print("enter valid name")
     user_name=input()
-    username(user_name)
+    username(user_name,acc_no)
 user_name=input()
-username(user_name)
+username(user_name,acc_no)
   
 f = open("bankinfo.txt", "w")
 f.write(str(uname))
@@ -42,9 +42,9 @@ def check(email):
 email=input()
 check(email)
 Mail_id.update({acc_no:email}) 
+print("login successfully")
 f.write(str(Phone_number))
 f.write(str(Mail_id))
 
 
 f.close()
-
