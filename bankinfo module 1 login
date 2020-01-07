@@ -1,6 +1,7 @@
 import random
 list=[]
 r=random.randint(1000000000,9999999999)
+list.append(r)
 if r not in list:
   acc_no=r
 uname={}
