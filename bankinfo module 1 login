@@ -9,7 +9,7 @@ Mail_id={}
 print("ENTER YOUR NAME")
 def username(user_name):
   if (user_name.isalpha()) == True: 
-    uname[acc_no] = user_name
+    uname.update({acc_no:user_name}) 
   else:
     print("enter valid name")
     user_name=input()
@@ -27,7 +27,7 @@ def phone(phone_number):
     phone(phone_number)
 phone_number=input()
 phone(phone_number)
-Phone_number[acc_no]=phone_number
+Phone_number.update({acc_no:phone_number}) 
 print("ENTER YOUR MAIL ID")
 import re 
 regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
@@ -40,7 +40,7 @@ def check(email):
         check(email)
 email=input()
 check(email)
-Mail_id[acc_no]= email
+Mail_id.update({acc_no:email}) 
 f.write(str(Phone_number))
 f.write(str(Mail_id))
 
